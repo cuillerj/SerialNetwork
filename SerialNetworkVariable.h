@@ -1,4 +1,4 @@
-
+// Arduino side
 /* format du message
  ERCAMessK - E adresse emetteur sur 1 octet (HEX) R adresse recepteur -  C commande sur 1 octet (HEX) - A acquis/ reponse comande 1 octet- Mess Message(max 256 octets)(char) - longueur du message (hex)
  dans la phase d'init le master scrute le reseau a la recherche de stations dans la limite de MaxStations via le commande FF
