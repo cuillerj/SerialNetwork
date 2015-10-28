@@ -6,6 +6,8 @@
  // numerique 3 5 6 utilise par virtuallib
  */
 //  needed for RF434 network  >>
+#ifndef SerialNetworkVariable_h_included
+#define SerialNetworkVariable_h_included
 
 uint8_t addrSSerial=0x01; // station address par defaut
 uint8_t addrMSerial=0x00;  // adresse Master 
@@ -58,6 +60,6 @@ uint8_t DataInSerial[31]; // data input (max 27)
 //
 
 
-
+#endif
 
 // ***************************************************************************************************
