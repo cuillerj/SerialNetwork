@@ -89,13 +89,14 @@ void DataToSendSerial(){
 //		{
 			Serial2.write((uint8_t *)msgSerial,9+DataLenSerial);
 //		}
+//		delay(50);
 		 tSendSerial=millis();
       //   PendingReq=0x00;
       //   PendingDataLenSerial=0;
       //      digitalWrite(13, false);
 //		TrafficStationsOutSerial= TrafficStationsOutSerial+1;
 		trySendSerial[1]=0x01; // force ack recu avant developpement reception
-
+//	    PendingReqSerial=0x00;
     }
     else
     {
@@ -345,7 +346,7 @@ void ReSendSecuSerial(){
 	  }
     PendingDataLenSerial=PendingSecDataLenSerial;
 //	 pendingNumberSerial=pendingNumberSerial+1;
-
+	trySendSerial[1]=0x00;
   }
   int Serial_have_message(){
 	  int len=0;
