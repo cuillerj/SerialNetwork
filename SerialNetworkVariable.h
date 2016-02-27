@@ -8,19 +8,21 @@
 //  needed for RF434 network  >>
 #ifndef SerialNetworkVariable_h_included
 #define SerialNetworkVariable_h_included
-
+#define sizeReqSerial 30    // define maximum data lengh
+#define sizeInputSerial 30    // define maximum data lengh
+//#define debugConnection true
 uint8_t addrSSerial=0x01; // station address par defaut
 uint8_t addrMSerial=0x00;  // adresse Master 
 uint8_t addrRSerial=0x00;  // destinataire
 uint8_t cmdeSerial=0x00;  // commande (FF init comm, EF polling
 uint8_t acqSerial=0x00;   // acq de la commande 
-uint8_t dlenSerial=0x00;  // data length (start 6th Byte not longer than 20 Bytes)
+uint8_t dlenSerial=0x00;  // data length (start 6th Byte not longer than 30 Bytes)
 uint8_t StationTypeSerial=0x00; // type of station 
 uint8_t PendingReqSerial=0x00; // pending request (if 0x00 none)
-uint8_t PendingDataReqSerial[20]; // pending data request to send master
+uint8_t PendingDataReqSerial[sizeReqSerial]; // pending data request to send master
 uint8_t PendingDataLenSerial;
 uint8_t PendingSecReqSerial=0x00; // pending request (if 0x00 none) - copie pour retry
-uint8_t PendingSecDataReqSerial[20]; // pending data request to send master- copie pour retry
+uint8_t PendingSecDataReqSerial[sizeReqSerial]; // pending data request to send master- copie pour retry
 uint8_t PendingSecDataLenSerial;
 uint8_t pendingNumberSerial=0x00;
 uint8_t lastSentNumberSerial=0x00;
@@ -54,8 +56,8 @@ int DataLenSerial=0; // data input detected length
 //String val;
 //String data=0x00;
 //char c=0;
-uint8_t msgSerial[31]; // message in and out maxi 27 bytes including 0x7f+0x7e +0x7e+0x7f+header(5)
-uint8_t DataInSerial[31]; // data input (max 27)
+uint8_t msgSerial[sizeReqSerial+9]; // message in and out maxi 27 bytes including 0x7f+0x7e +0x7e+0x7f+header(5)
+uint8_t DataInSerial[sizeInputSerial+9]; // data input (max 27)
 
 //
 
