@@ -1,7 +1,7 @@
 
 void DataToSendSerial(){
 
-	    if (ConnectedSerial!=0x00 )
+ if (ConnectedSerial!=0x00 )
   {
 	msgSerial[0]=0x7f;
     msgSerial[1]=0x7e;
